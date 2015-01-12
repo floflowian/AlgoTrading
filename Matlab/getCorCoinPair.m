@@ -1,4 +1,4 @@
-function [ correlation, cointegration ] = testPair( symbol1, symbol2 )
+function [ correlation, cointegration ] = getCorCoinPair( symbol1, symbol2 )
 
 [date1, high1, low1, open1, close1, vol1] = get_hist_stock_data(symbol1);
 [date2, high2, low2, open2, close2, vol2] = get_hist_stock_data(symbol2);
