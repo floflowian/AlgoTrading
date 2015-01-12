@@ -1,7 +1,9 @@
-%clear all;
-%close all;
+clear all;
+close all;
+minimumCorr=0.90;
+maximumCoin=-3.34;
 
-selectedPairs = rankPairsBySector('Staples');
+selectedPairs = rankPairsBySector('Staples',minimumCorr,maximumCoin);
 
 nbPairs=size(selectedPairs,1);
 

@@ -1,4 +1,4 @@
-function [ selectedPairs ] = rankPairsBySector(sector)
+function [ selectedPairs ] = rankPairsBySector(sector,minimumCorr,maximumCoin)
 
 [num, txt]=xlsread(strcat('Data/',sector,'.xlsx'));
 symbols=txt(2:end,1);
@@ -21,9 +21,6 @@ for i=1:size(pairs,1)
     vectorCorr(i)= correlation;
     vectorCoin(i)= cointegration;
 end
-
-minimumCorr=0.90;
-maximumCoin=-3.34;
 
 selectedByCorr=find(vectorCorr>minimumCorr);
 selectedByCoin=find(vectorCoin<maximumCoin);
